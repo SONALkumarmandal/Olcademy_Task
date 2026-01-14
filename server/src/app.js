@@ -2,7 +2,7 @@ import  express from "express"
 import cors from "cors"
 import { loggerMiddleware } from "./middleware/loggerMiddleware.js"
 import { errorMiddleware } from "./middleware/errMiddleware.js"
-import { perfumes } from "./controllers/perfumesControllers.js"
+import homeRoute from "./routes/homeRoute.js"
 
 const corsOptions = {
     origin : "*",
@@ -17,8 +17,8 @@ export const createApp = ()=>{
     app.use(cors(corsOptions))
     app.use(loggerMiddleware)
 
-    app.use('/perfumes',perfumes)
-
+    app.use('/products',homeRoute)
+    app.use('/admin',adminRoute)
     app.use(errorMiddleware)
     return app
 }
