@@ -1,4 +1,4 @@
-export const loggerMiddleware = (err,req,res,next)=>{
+export const loggerMiddleware = (req,res,next)=>{
     console.log(`[${new Date.toString()}] ${req.path} ${req.params}`)
     next()
 }

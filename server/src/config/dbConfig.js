@@ -6,6 +6,6 @@ export const dbConfig=async()=>{
        console.log("MongoDB Connected !")
     } catch (error) {
         console.log("DataBase connection error !",error)
-        process.exit(0)
+        process.exit(1)
     }
 }
