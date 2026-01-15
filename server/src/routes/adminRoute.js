@@ -1,4 +1,10 @@
-import { Router } from "express"
-const router = Router()
+import express from "express";
+import { adminUpload } from "../controllers/adminController.js";
+import { productSchema } from "../validators/product.zod.js";
+import { zodValidate } from "../middleware/zodValidate.js";
 
-router.post('/upload',adminUpload)
+const router = express.Router();
+
+router.post("/upload",zodValidate(productSchema),adminUpload);
+
+export default router;

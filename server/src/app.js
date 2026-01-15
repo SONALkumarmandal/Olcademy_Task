@@ -3,6 +3,7 @@ import cors from "cors"
 import { loggerMiddleware } from "./middleware/loggerMiddleware.js"
 import { errorMiddleware } from "./middleware/errMiddleware.js"
 import homeRoute from "./routes/homeRoute.js"
+import adminRoute from "./routes/adminRoute.js"
 
 const corsOptions = {
     origin : "*",
@@ -19,6 +20,11 @@ export const createApp = ()=>{
 
     app.use('/products',homeRoute)
     app.use('/admin',adminRoute)
+    app.get('/',(req,res)=>{
+        res.json({
+            "message" : "server is running!"
+        })
+    })
     app.use(errorMiddleware)
     return app
 }

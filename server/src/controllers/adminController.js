@@ -1,13 +1,11 @@
-import Product from "../model/appSchema"
+import Product from "../model/appSchema.js";
+import { response } from "../utils/response.js";
 
-
-export const adminUpload =async (err,req,res,next)=>{
-    try {
-        const body=req.body
-        await Product.create(body)
-       response(req,101,body)
-    } catch (error) {
-     console.log(error)
-     next(error)
-    }
-}
+export const adminUpload = async (req, res, next) => {
+  try {
+    const product = await Product.create(req.body);
+    response(res, 201, product);
+  } catch (error) {
+    next(error);
+  }
+};
