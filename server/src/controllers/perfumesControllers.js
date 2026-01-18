@@ -13,22 +13,30 @@ export const fetchAllProds = async (req, res, next) => {
 
 export const fetchByProduct = async (req, res, next) => {
   try {
-    const { _id } = req.query; 
+    const { id } = req.params;
 
-    if (!_id) {
-      return res.status(400).json({ success: false, message: "_id query parameter is required" });
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        message: "Product id is required",
+      });
     }
 
-    const data = await Product.findById(_id);
-    if (!data) {
-      return res.status(404).json({ success: false, message: "Product not found" });
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return res.status(404).json({
+        success: false,
+        message: "Product not found",
+      });
     }
 
-    response(res, 200, data);
+    response(res, 200, product);
   } catch (error) {
-    console.log("Error", error);
+    console.error("Fetch product error:", error);
     next(error);
   }
 };
+
 
 export default { fetchAllProds, fetchByProduct };

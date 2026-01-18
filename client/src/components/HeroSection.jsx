@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function HeroSection() {
   return (
     <div className="relative min-h-screen pt-32 text-white overflow-hidden">
@@ -33,7 +33,7 @@ function HeroSection() {
             Elevate your style with every note.
           </p>
 
-          <div className="mt-10 flex gap-6">
+          <Link to='/explore' className="mt-10 flex gap-6">
             <button className=" animate-pulse px-7 py-3 bg-amber-400 text-black font-semibold rounded-full hover:bg-amber-500 transition">
               Shop Now
             </button>
@@ -41,7 +41,7 @@ function HeroSection() {
             <button className="px-7 py-3 border border-white rounded-full hover:bg-white hover:text-black transition">
               Explore Collection
             </button>
-          </div>
+          </Link>
         </div>
         
 

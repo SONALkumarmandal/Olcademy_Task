@@ -29,13 +29,13 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="w-full">
+    <div>
       <HeroSection />
 
       {/* Products Section */}
       <section className="w-full px-4 py-10 md:px-8 lg:px-14">
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-          <i>Featured Perfumes</i>
+          Featured Perfumes
         </h2>
 
         {/* GRID */}

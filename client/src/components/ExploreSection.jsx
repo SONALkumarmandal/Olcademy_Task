@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function ExploreSection() {
   return (
     <section className="relative py-24 bg-black text-white overflow-hidden lg:m-0">
@@ -28,9 +28,9 @@ function ExploreSection() {
             
             <span className="absolute inset-0 bg-amber-400 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
             
-            <span className="relative z-10 text-amber-400 group-hover:text-black transition-colors duration-300">
+            <Link className="relative z-10 text-amber-400 group-hover:text-black transition-colors duration-300">
               Explore Collection
-            </span>
+            </Link>
 
             <span className="relative z-10 transform group-hover:translate-x-1 transition duration-300">
               →

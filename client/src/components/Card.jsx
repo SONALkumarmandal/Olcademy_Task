@@ -1,12 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card({ prodData }) {
+  const navigate = useNavigate();
+
   const rating =
     prodData?.reviews?.length > 0 ? prodData.reviews[0].rating : "N/A";
 
+  const goToDetails = () => {
+    navigate(`/product/${prodData._id}`);
+  };
+
   return (
     <div
+      onClick={goToDetails}
       className="
+        cursor-pointer
         w-full
         sm:max-w-xs
         md:max-w-sm
@@ -51,6 +60,10 @@ function Card({ prodData }) {
 
       {/* Button */}
       <button
+        onClick={(e) => {
+          e.stopPropagation();
+          alert("Buy flow coming soon 🚀");
+        }}
         className="
           mt-5
           w-full
