@@ -1,9 +1,9 @@
-import  express from "express"
+import express from "express"
 import cors from "cors"
-import { loggerMiddleware } from "./middleware/loggerMiddleware.js"
-import { errorMiddleware } from "./middleware/errMiddleware.js"
 import homeRoute from "./routes/homeRoute.js"
 import adminRoute from "./routes/adminRoute.js"
+import { loggerMiddleware } from "./middleware/loggerMiddleware.js"
+import { errorMiddleware } from "./middleware/errMiddleware.js"
 
 const corsOptions = {
     origin : "*",
